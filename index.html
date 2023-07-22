@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/045ebfb3ca.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/87781199?s=200&v=4" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MechaKeys - The Mechanical Keyboard Simulator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/149/547/831/violet-gradient-abstract-wallpaper-preview.jpg');
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 1900%;
+        }
+
+        *{
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background-color: #2222228c;
+            display: flex;
+            position: sticky;
+            top: 0;
+            transition: 0.2s;
+            justify-content: center;
+            align-items: center;
+            padding: 45px;
+        }
+
+        .left-content {
+            position: absolute;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin: 0 20px;
+            top: 1;
+        }
+
+        .left-content img {
+            width: 50px;
+            transition: 0.2s;
+        }
+
+        .right-content {
+            color: white;
+            position: absolute;
+            top: 1;
+            right: 0;
+            font-size: 20px;
+            margin: 0 20px;
+        }
+
+        .right-content i {
+            margin: 0 10px;
+        }
+
+        .first,
+        .second {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .devName{
+            font-family: 'Poppins', sans-serif;
+            margin: 0 20px;
+        }
+        .devName h3{
+            color: white;
+            font-size: 20px;
+            font-weight: lighter;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+        .devName span{
+            font-size: 25px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar li{
+            list-style: none;
+            margin: 0 4vmin;
+        }
+        .navbar ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.2s;
+            flex-direction: row;
+        }
+        .navbar li a{
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            font-size: 2.8vmin;
+            text-decoration: none;
+        }
+        @media screen and (max-width: 1100px){
+            .middle-content{
+                display: none;
+                padding: 0px;
+            }
+            .navbar{
+                padding: 55px;
+            }
+        }
+        @media screen and (min-width: 1100px){
+            .navbar{
+                padding: 15px;
+            }
+        }
+        #section-one{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container h1{
+            font-size: 13.45vmin;
+        }
+        .container #tagline{
+            font-size: 4.7vmin;
+            margin-top: -10vmin;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: lighter;
+        }
+        .container{
+            margin: 0 20px;
+        }
+        .download-btn{
+            padding: 15px;
+            width: 32vmin;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            background: rgb(225, 0, 255);
+            color: white;
+            transition: ease-in-out 0.2s;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5vmin;
+        }
+        .download-btn:hover{
+            cursor: pointer;
+            background: greenyellow;
+            transform: scale(1.05);
+            color: #000
+        }
+        #terms{
+            font-size: 10px;
+            font-family:'Courier New', Courier, monospace
+        }
+        .image img{
+            margin-top: 12.5vmin;
+            width: 70vmin;
+            box-shadow: 3px 4px 100px rgba(74, 5, 131, 0.973);
+            border-radius: 14px;
+            transition: ease-in-out 0.2s;
+        }
+        .image img:hover{
+            cursor: pointer;
+        }
+        section#section-two{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+        span#terms-span a{
+            color: white;
+        }
+        .feat-list li{
+            font-size: 3vmin;
+        }
+        section#section-three{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        section#section-three h1{
+            text-align: center;
+        }
+        p#question{
+            font-size: 3vmin;
+            font-weight: 50;
+            color: black;
+        }
+        p#answer{
+            font-size: 2.5vmin;
+            font-weight: lighter;
+            background: linear-gradient(20deg, rgb(85, 23, 121),rgb(219, 62, 88),purple);
+            border-radius: 13px;
+            color: white;
+            padding: 15px;
+        }
+        .ques{
+            background-color: #f9f9f9;
+            color: #222;
+            border-radius: 9px;
+            margin: 20px;
+            padding: 15px;
+            box-shadow: 4px 4px 100px #39057e;
+        }
+    </style>
+</head>
+<body onclick="getEffect()">
+    <div class="navbar">
+        <div class="left-content">
+            <div class="img">
+                <img id="char" src="https://www.minecraftskins.com/uploads/avatars/2022/01/19/6a026c531efbfcbb03e3fe299f71544352c67aed.png?v567" alt="">
+            </div>   
+            <div class="devName">
+                <h3>created by <br><span>robolab.io</span></h3>
+            </div>
+        </div>
+        <div class="middle-content">
+            <ul>
+                <li><a href="#section-one">MechaKeys</a></li>
+                <li><a href="#section-two">Features</a></li>
+                <li><a href="#section-three">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="right-content">
+            <i class="fa-solid fab fa-reddit-alien"></i>
+            <i class="fa-solid fab fa-discord"></i>
+        </div>
+    </div>
+    <section id="section-one">
+        <div class="container">
+            <h1>MechaKeys</h1>
+            <p id="tagline">The Mechanical Keyboard Simulator for Desktop!</p>
+            <a href="https://mechakeys.robolab.io/download/mechakeys-app.zip"><button class="download-btn">Download <span>(.zip)</span></button></a>
+            <p id="terms">*By downloading, you agree to the <span id="terms-span"><a href="https://mechakeys.robolab.io/terms.html">Terms of Service.</a></span></p>
+        </div>
+        <div class="image">
+            <img src="https://mechakeys.robolab.io/app.png" alt="">
+        </div>
+    </section>
+    <section id="section-two">
+        <div class="container">
+            <h1>Features</h1>
+            <p id="tagline">MechaKeys has features!</p>
+            <div class="feat-list">
+                <ul>
+                    <li>Free Application</li>
+                    <li>Free & Paid Soundpacks</li>
+                    <li>No Ads</li>
+                    <li>HD Quality Soundpacks</li>
+                    <li>Create account to count keystrokes and earn keycaps!</li>
+                    <li>Weekly Keystroke Leaderboards!</li>
+                    <li>Plays different sounds for each key category!</li>
+                    <li>New sounds and updates always coming!</li>
+                    <li>Separated downstrokes and upstrokes for dat i m m e r s i o n.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="section-three">
+        <div class="container">
+            <h1>FAQ</h1>
+            <div class="ques">
+                <p id="question">Q: What are keycaps?</p>
+                <p id="answer">A: Keycaps are coins, you can earn them by using the app, or if you feel like supporting the developer, (me!), you can purchase digital keycaps with real money.</p>
+                <p id="question"><p id="question">Q: This app listens to keystrokes, why should I trust you?</p></p>
+                <p id="answer">A: Feel free to check all network activity from this application. You'll find the ONLY data it sends regarding keystrokes is the keystroke count, which can be completely disabled.</p>
+                <p id="question">Q: Can you please make a soundpack of _______ keyboard?</p>
+                <p id="answer">A: I'd love to, but as Mechanical Keyboard enthusiasts, we all know how expensive that can be. Please feel free to endlessly pitch your ideas and suggestions either on the sub-reddit or in Discord, even email-- but please consider donating by buying keycaps!</p>
+                <p id="question">Q: What's that progress bar at the bottom?</p>
+                <p id="answer">A: A live progress bar of how close we are to a new soundpack release! This bar automatically fills when users buy keycaps in the app.</p>
+                <p id="question">Q: When is the Mac version coming?</p>
+                <p id="answer">A: Hopefully soon™. Unfortunately, publishing an app on Mac requires me to shell out some cash.</p>
+            </div>
+        </div>
+    </section>
+    <script>
+        function getEffect(){
+            document.querySelector('#char').style.transform = "scale(1.2)";
+            setTimeout(function(){
+                document.querySelector('#char').style.transform = "scale(1)";
+            }, 250)
+        }
+    </script>
+</body>
+</html>
